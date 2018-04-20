@@ -1,0 +1,571 @@
+/*
+ * General settings and styles
+ *
+ */
+body {
+	background: #FFAA00;
+	font-family: Arial, Helvetiva, sans-serif;
+	font-size: 1em;
+	font-weight: normal;	
+	color: black;
+}
+
+#headline {
+	font-size:40px;
+	color: #FFAA00;
+	font-weight: bold;
+	
+	margin-top: 5px;
+}
+
+/*
+ * Panels
+ *
+ */
+#mainPanel {
+	width: 100%;
+	height: 100%;
+	background: #FFAA00;
+}
+
+#sudokuPanel {
+	background: #FFAA00;	
+
+	width: 49%;
+
+	position: absolute;
+	left: 0.7em;
+	top: 60px;
+	bottom: 0.7em;
+	
+	padding: 0.2em;
+	margin-top: 0.5em;		
+	border-radius: 5px;	
+}
+
+#cnfPanel {
+	border: none;
+	background: #FFAA00;
+
+	width: 49%;
+	
+	position: absolute;
+	right: 0.7em;
+	top: 60px;
+	bottom: 0.7em;
+
+	padding: 0.2em;
+	margin-top: 0.5em;	
+}
+
+#header {
+	border: none;
+	border-radius: 6px;
+	background: white;
+	
+	position: absolute;
+
+	height: 55px;
+
+	top: 0.7em;
+	left: 1.7em;
+	right: 1.7em;
+	
+	text-align: center;
+	vertical-align:center;
+}
+
+/************************************** Panels inside sudokuPanel */
+
+#sudokuSelectionPanel {
+	border: none;
+	border-radius: 6px;
+	background: white;
+	
+	position: absolute;	
+	height: 2em;
+	top: 0.5em;	
+	left: 1em;
+	right: 1em;	
+}
+
+#puzzlePanel {
+	border: none;
+	border-radius: 6px;
+	background: white;
+	border: 0px; 	
+	
+	position: absolute;	
+	top: 3em;
+	left: 1em;
+	right: 1em;	
+	bottom: 0.5em;	
+}
+
+#sudokuSelector {
+	position: absolute;
+	top: 5px;
+	left: 2%;
+	right:1em;
+	width:96%;
+}
+
+/************************************** Panels inside cnfPanel */
+
+#formalPanel {
+	border: none;
+	border-radius: 6px;
+	background: white;
+		
+	position: absolute;	
+	top: 0.5em;
+	bottom: 3em;	
+	left: 1em;
+	right: 1em;	
+}
+
+#messagePanel {
+	position: absolute;
+	bottom: 0.8em;
+	left: 1em;
+	right: 1em;
+	height: 1.4em;
+}
+
+#clausePanel {
+	position: absolute;
+	bottom: 2em;
+	top: 0.8em;
+	left: 0em;
+	right: 0em;
+}
+
+#unitPanel {
+	border: none;
+	border-radius: 6px;
+	background: white;
+	
+	vertical-align: middle;
+	
+	position: absolute;	
+	bottom: 0.5em;
+	height: 2em;	
+
+	left: 1em;
+	right: 1em;		
+}
+
+/************************************** Message panel */
+.messageEmpty {
+	visibility: hidden;
+}
+
+.messageAlert {
+	background: #CF0000;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+.messageNotification {
+	background: #64CF00;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+
+
+/************************************** Sudoku table */
+
+#tableContainer {
+	position: absolute;
+	left: 1em;
+	right: 1em;
+	top: 0.5em;
+	bottom: 0.5em;			
+}
+
+#sudokuTable {
+	/*border: 3px solid #FFAA00;*/
+	table-layout: fixed;
+	empty-cells = "show";
+	width: 100%;
+	height: 100%;
+	border-spacing: 0px;
+}
+
+.sudokuImpairBlock {
+	border: 1px solid #FFAA00;
+	background: #fff0a2;
+	margin: 0px;
+	padding: 0%;	
+	text-align: center;
+}
+
+.sudokuPairBlock {
+	border: 1px solid #FFAA00;
+	background: #ffd607;
+	padding: 0px;
+	text-align: center;
+	margin: 0px;
+	padding: 0%;
+}
+
+.sudokuPredefinedCellContainer {
+	font-weight: bold;
+	font-size: 2.2em;
+	/* FIXME */	
+	margin: 0px;
+	padding: 0%;
+	display: table;
+	min-height: 100%;
+	width: 100%;
+}
+
+.sudokuFixedCellContainer {
+	font-weight: bold;
+	font-size: 1.8em;
+	/* FIXME */
+	margin: 0px;
+	padding: 0%;
+	display: table;
+	min-height: 100%;
+	width: 100%;
+}
+
+.sudokuFixedCellContainer:hover {
+	background: #FFAA00;
+	color: white;
+	cursor: pointer;
+}
+
+.sudokuOptionCellContainer {
+	width: 100%;
+	max-height: 80%;
+	margin: 0px;
+	padding :0px;
+	text-align: center;
+}
+
+.sudokuOptionTable {
+	empty-cells: show;
+	font-size: 0.7em;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	text-align: center;
+	
+}
+
+.sudokuOptionElement {
+	height: 1.2em;
+	width: 1em;
+	padding: 0px;
+	margin: 0px;
+}
+
+.sudokuOptionElementHidden {
+	background: #CF0000;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	height: 1.2em;	
+	width: 1em;
+	cursor: pointer;
+}
+
+.sudokuOptionElementHidden:hover {
+	background: white;
+	color: red;
+}
+
+.sudokuOptionElement:hover {
+	background: #FFAA00;
+	color: white;
+	cursor: pointer;
+}
+
+.sudokuEmptyOptionElement {
+	height: 1em;
+	width: 1em;
+}
+
+.sudokuOptionHighlightedSet {
+	background-color: #64CF00;
+	color: white;
+	height: 1.2em;
+	width: 1em;	
+}
+
+.sudokuOptionHighlightedDel {
+	background-color: #CF0000;
+	color: white;
+	height: 1.2em;
+	width: 1em;	
+}
+
+
+/************************************** CNF display */
+#cnfList {
+	border: 1px solid black;
+	position: absolute;
+	top: 1em;
+	left: 1em;
+	right: 1em;
+	bottom: 1em;
+	
+	overflow: scroll;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.clauseContainerSatisfied {
+	display: none;
+	margin: 0px;
+	padding: 0px;	
+	height: 0px;
+}
+
+.clauseContainerUnsatisfied {
+	background: #CF0000;
+	border-bottom: 1px solid #FFAA00;
+	margin: 2px;
+	padding: 2px;
+	height: 1.2em;
+}
+
+.clauseContainerUnassigned {
+	border-bottom: 1px solid #FFAA00;
+	margin: 2px;
+	padding: 2px;
+	height: 1.2em;
+}
+
+.literalContainer {
+	font-weight: bold;
+	display: inline;
+	padding: 2px;
+	margin: 8px;
+	height: 1em;
+	cursor: pointer;	
+}
+
+.literalContainer:hover {
+	background: #FFAA00;
+	color: white;	
+}
+
+.literalContainerSAT {
+	background: #64CF00;
+	color: white;
+	font-weight: bold;
+	display: inline;
+	padding: 2px;
+	margin: 8px;
+	height: 1em;	
+	cursor: pointer;
+}
+
+.literalContainerUNSAT {
+	background: #CF0000;
+	color: white;
+	font-weight: bold;
+	display: inline;
+	padding: 2px;
+	margin: 8px;
+	height: 1em;
+	cursor: pointer;	
+}
+
+.literalContainerUNSAT:hover {
+	background: white;
+	color: #CF0000;
+}
+
+.literalContainerAssigned {
+	visibility: hidden;
+	display: none;
+	font-weight: bold;
+	display: none;
+	padding: 2px;
+	margin: 8px;
+	height: 1em;	
+}
+
+.literalContainerUnit {
+	background: #FFAA00;
+	color: white;
+	font-weight: bold;
+	display: inline;
+	padding: 2px;
+	margin: 8px;
+	height: 1em;	
+	cursor: pointer;	
+}
+
+.literalContainerUnit:hover {
+	border: 1px solid #FFAA00;
+	border-bottom: 2px;
+	background: white;
+	color: #FFAA00;
+	font-weight: bold;
+}
+
+#unitTextBox {
+	border: 1px solid;
+	background: white;
+	font-size:0.8em;
+	font-weight:bold;
+	
+	position: relative;
+	top: 0.4em;
+	bottom: 0.3em;
+	left: 1em;
+	right: 1em;
+	margin-right: 1em;
+	
+	width: 50%;
+	
+	display:inline;
+}
+
+#unitButton {
+	background: white;
+	font-weight:bold;
+	color: #FFAA00;
+	cursor: pointer;
+	
+	position: relative;
+	top: 0.4em;
+	bottom: 0.3em;
+	right: 1em;
+	left: 1em;
+		
+	display:inline;
+}
+
+#unitButton:hover {
+	text-decoration: underline;
+}
+
+#allButton {
+	background: white;
+	font-weight:bold;
+	color: #FFAA00;
+	cursor: pointer;
+
+	position: relative;
+	top: 0.4em;
+	bottom: 0.3em;
+	margin-left: 1em;
+	right: 1em;
+	left: 1em;
+		
+	display:inline;
+	
+}
+
+#allButton:hover {
+	text-decoration: underline;
+}
+
+#revokeButton {
+	background: white;
+	font-weight:bold;
+	color: #FFAA00;
+	cursor: pointer;
+
+	position: relative;
+	top: 0.4em;
+	bottom: 0.3em;
+	margin-left: 1em;
+	right: 1em;
+	left: 1em;
+		
+	display:inline;	
+}
+
+#revokeButton:hover {
+	text-decoration: underline;
+}
+
+.buttonSeperator {
+	background: #FFAA00;
+	display:inline;
+	
+	height:100%;
+	width: 3px;
+}
+
+/*
+ * Artwork
+ *
+ */
+div.ol {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:12px;
+	height:12px;
+	background-image:url(./ecke_ol.gif);
+}
+.or {
+	position:absolute;
+	top:0px;
+	right:0px;
+	left:expression(this.parentNode.clientWidth-12 + 'px');
+	width:12px;
+	height:12px;
+	background-image:url(./ecke_or.gif);
+}
+.ul {
+	position:absolute;
+	bottom:0px;
+	top:expression(this.parentNode.clientHeight-12 + 'px');
+	left:0px;
+	width:12px;
+	height:12px;
+	background-image:url(./ecke_ul.gif);
+}
+.ur {
+	position:absolute;
+	bottom:0px;
+	top:expression(this.parentNode.clientHeight-12 + 'px');
+	right:0px;
+	left:expression(this.parentNode.clientWidth-12 + 'px');
+	width:12px;
+	height:12px;
+	background-image:url(./ecke_ur.gif);
+} 
+
+#tudlogo {
+	background-image:url(./tud_logo_intern.gif);
+	position:absolute;
+
+	width:128px;
+	height:37px;
+	
+	left: 10px;
+	top: 11px;
+}
+
+#iccllogo {
+	background-image:url(./iccl_logo.gif);	
+
+	position:absolute;
+
+	width:271px;
+	height:42px;
+	
+	right: 10px;
+	top: 7px;
+}
+
+

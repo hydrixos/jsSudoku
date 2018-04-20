@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>Interactive Sudoku vs. SAT Solver</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+	<link rel="stylesheet" href="res/main.css" type="text/css" media="screen" charset="UTF-8" title="Default">
+
+	<script type="text/javascript" src="./debug.js" charset="UTF-8"></script>
+
+	<script type="text/javascript" src="./tables/table2-1.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./tables/table2-2.js" charset="UTF-8"></script>	
+	<script type="text/javascript" src="./tables/table3-1.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./tables/table3-2.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript" src="./model/cnf.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./model/sudoku.js" charset="UTF-8"></script>
+	
+	<script type="text/javascript" src="./view/cnf-visualizer.js" charset="UTF-8"></script>	
+	<script type="text/javascript" src="./view/sudoku-visualizer.js" charset="UTF-8"></script>		
+
+	<script type="text/javascript" src="./controller/controller.js" charset="UTF-8"></script>
+</head>
+
+<body onload="mainController = new MainController();">
+
+<div id="mainPanel">
+	<div id="header">
+		<div id="headline">Sudoku vs. SAT</div>		
+	</div>
+
+	<div id="sudokuPanel">
+		<div id="sudokuSelectionPanel">
+		</div>
+
+		<div id="puzzlePanel">
+		</div>
+	</div>
+
+	<div id="cnfPanel">
+		<div id="formalPanel">
+			
+			<div id="messagePanel"></div>
+			
+			<div id="clausePanel"></div>
+		</div>
+	
+		<div id="unitPanel">
+		</div>
+	</div> 
+
+</div>
+
+</body>
+</html>
+
